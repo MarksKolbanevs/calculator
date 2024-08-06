@@ -96,6 +96,7 @@ section{
     .inner-container{
         width: 100%;
         max-width: 540px;
+        padding: 15px;
         header{
             display: flex;
             align-items: center;
@@ -219,5 +220,14 @@ section{
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .keypad-container{
+        gap:10px !important;
+    }
+    section{
+        justify-content: normal !important;
     }
 }
