@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+// background-color: #3B4664;
+
+:root {
+    --bg-color: #3B4664;
+    --display-color: #181F32;
+    --keypad-bg-color:#252C46;
+    --btn-color:#EAE3DB;
+    --accent-btn-color:#637299;
+    --second-accent-btn-color:#D13F30;
+    --accent-btn-number-color:white;
+    --number-color:#424959;
+    --btn-hover-color:#FFFFFF;
+    --display-value-color:#FDFDFB;
+    --accent-btn-hover-color:#A2B3E1;
+    --second-accent-btn-hover-color:#F96C5B;
+    --second-accent-btn-number-color:white;
+    --btn-shadow-color:#B2A295;
+    --accent-btn-shadow:#414E71;
+    --second-accent-btn-shadow:#912316;
+    --switcher-bg-color:#252C46;
+    --switcher-ball-color:#F96C5A;
+    --header-text-color:#FEFFFB;
+}
+
+[data-theme='bright'] {
+    --bg-color: #E6E6E6;
+    --display-color: #EEEEEE;
+    --keypad-bg-color:#D3CDCD;
+    --btn-color:#E5E4E0;
+    --accent-btn-color:#378287;
+    --second-accent-btn-color:#C85401;
+    --accent-btn-number-color:white;
+    --number-color:#36362A;
+    --btn-hover-color:#FFFFFF;
+    --display-value-color:#38382F;
+    --accent-btn-hover-color:#62B5BD;
+    --second-accent-btn-hover-color:#FF8B38;
+    --second-accent-btn-number-color:#FFF9F8;
+    --btn-shadow-color:#B2A295;
+    --accent-btn-shadow:#414E71;
+    --second-accent-btn-shadow:#873700;
+    --switcher-bg-color:#D3CDCD;
+    --switcher-ball-color:#C75201;
+    --header-text-color:#37372F;
+}
+
+[data-theme='dark'] {
+    --bg-color: #17062A;
+    --display-color: #1E0836;
+    --keypad-bg-color:#1E0836;
+    --btn-color:#331B4D;
+    --accent-btn-color:#56077C;
+    --second-accent-btn-color:#00DECF;
+    --accent-btn-number-color:white;
+    --number-color:#FFDD35;
+    --btn-hover-color:#6B34AC;
+    --accent-btn-hover-color:#8631B0;
+    --display-value-color:#FFE43A;
+    --second-accent-btn-hover-color:#94FFF9;
+    --second-accent-btn-number-color:#0A272D;
+    --btn-shadow-color:#802098;
+    --accent-btn-shadow:#BF16F5;
+    --second-accent-btn-shadow:#6DF9F0;
+    --switcher-bg-color:#1C0936;
+    --switcher-ball-color:#96FEFB;
+    --header-text-color:#FEE444;
+}
+
+html,body{
+    background-color: var(--bg-color);
+    // box-sizing: border-box;
+    // color: var(--secondary-color);
+}
+
+html,body,h1,h2,h3,h4,h5,h6,p{
+    font-family: 'League Spartan', sans-serif;
+    margin: 0;   
+}
+*{
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box; 
+}
+button{
+    border: 0;
+    cursor: pointer;
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .inner-container{
+        width: 100%;
+        max-width: 540px;
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .logo{
+                font-size: 35px;
+                color:var(--header-text-color);
+                letter-spacing: -2px;
+            }
+            .color-switcher-container{
+                margin: 35px 0px;
+                display: flex;
+                font-weight: bold;
+                color:var(--header-text-color);
+                gap:20px;
+                .switcher{
+                    width: 60px;
+                    background-color: var(--switcher-bg-color);
+                    padding: 6px 0px;
+                    border-radius: 500px;
+                    display: flex;
+                    cursor: pointer;
+                    &.--root{
+                        justify-content: flex-start;
+                    }
+                    &.--bright{
+                        justify-content: center; 
+                    }
+                    &.--dark{
+                        justify-content: flex-end; 
+                    }
+                    padding: 5px;
+                    .ball{
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: var(--switcher-ball-color);
+                        transition: 0.3s ease;
+                    }
+                }
+                h6{
+                    font-size: 12px;
+                    margin-top: 8px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .calc-display{
+            font-size: 55px;
+            background-color: var(--display-color);
+            font-weight: bold;
+            text-align: end;
+            border-radius: 10px;
+            width: 100%;
+            color:var(--display-value-color);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            min-height:51px;
+            margin-bottom: 25px;
+            padding: 45px 35px;
+        }
+        .keypad-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            background-color: var(--keypad-bg-color);
+            width: 100%;
+            border-radius: 10px;
+            gap:25px;
+            padding: 30px;
+            button{
+                padding: 16px; 
+                border-radius: 10px;
+                width: auto;
+                font-weight: bold;
+                text-align: center;
+                p{
+                    margin-top: 5px;
+                }
+                &.--number{
+                    background-color: var(--btn-color);
+                    -webkit-box-shadow: 0px 6px 0px 0px var(--btn-shadow-color);
+                    -moz-box-shadow: 0px 6px 0px 0px var(--btn-shadow-color);
+                    box-shadow: 0px 6px 0px 0px var(--btn-shadow-color);
+                    color:var(--number-color);
+                    font-size: 40px;
+                    transition: 0.3s ease;
+                    &:hover{
+                        transition: 0.3s ease;
+                        background-color: var(--btn-hover-color);
+                    }
+                }
+                &.--text{
+                    font-size: 30px;
+                }
+                &.--accent{
+                    color:white;
+                    background-color: var(--accent-btn-color);
+                    -webkit-box-shadow: 0px 6px 0px 0px var(--accent-btn-shadow);
+                    -moz-box-shadow: 0px 6px 0px 0px var(--accent-btn-shadow);
+                    box-shadow: 0px 6px 0px 0px var(--accent-btn-shadow);
+                    &:hover{
+                        transition: 0.3s ease;
+                        background-color: var(--accent-btn-hover-color);
+                    }
+                }
+                &.--second-accent{
+                    color:var(--second-accent-btn-number-color);
+                    background-color: var(--second-accent-btn-color);
+                    -webkit-box-shadow: 0px 6px 0px 0px var(--second-accent-btn-shadow);
+                    -moz-box-shadow: 0px 6px 0px 0px var(--second-accent-btn-shadow);
+                    box-shadow: 0px 6px 0px 0px var(--second-accent-btn-shadow);
+                    &:hover{
+                        transition: 0.3s ease;
+                        background-color: var(--second-accent-btn-hover-color);
+                    }
+                }
+                &.--big{
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}
