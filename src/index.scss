@@ -159,6 +159,9 @@ section{
             min-height:51px;
             margin-bottom: 25px;
             padding: 45px 35px;
+            p{
+                min-height: 51px;
+            }
         }
         .keypad-container{
             display: grid;

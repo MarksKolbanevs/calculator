@@ -82,7 +82,7 @@ function App() {
             </div>
           </header>
           <div className="calc-display">
-            {displayValue}
+            <p>{displayValue ? displayValue : "0"}</p>
           </div>
           <div className="keypad-container">
             <button className="button --number" onClick={() => createNumber("7")}><p>7</p></button>
